@@ -11,7 +11,10 @@ const app =express();
 connectDb()
 
 // middlewares functions
-app.use(cors());
+app.use(cors({
+  origin: "https://ticket-frontend-one.vercel.app/", // Replace with your Vercel domain
+  credentials: true,
+}));
 app.use(express.json());
 app.use(cookieParser())
 
